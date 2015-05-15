@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/fivetanley/ember-cli-dotenv.svg)](https://travis-ci.org/fivetanley/ember-cli-dotenv)
 # Ember CLI Dotenv
 
+# This is a fork of fivetanley/ember-cli-dotenv with PR#6 by github.com/gniquil that I created just to ease by deployment via NPM.  All credit goes to the original authors.
+
 # Installation
 
 `npm install --save-dev ember-cli-dotenv`
@@ -66,6 +68,49 @@ You can read more about dotenv files on their [dotenv repository][dotenv].
 All the work is done by ember-cli and [dotenv][dotenv]. Thanks ember-cli team and
 dotenv authors and maintainers! Thanks Brandon Keepers for the original dotenv
 ruby implementation.
+
+### Multiple Environments
+
+Sometime people may want to use different `.env` file than the one in project root.
+This can be configured as below:
+
+```javascript
+// Brocfile.js
+
+var app = new EmberApp({
+  dotEnv: {
+    clientAllowedKeys: ['DROPBOX_KEY'],
+    path: './path/to/.env'
+  }
+});
+
+// pre-generated config from ember-cli
+module.exports = app.toTree();
+```
+
+In addition, you may also customize for different environments:
+
+
+```javascript
+// Brocfile.js
+
+var app = new EmberApp({
+  dotEnv: {
+    clientAllowedKeys: ['DROPBOX_KEY'],
+    path: {
+      development: './path/to/.env',
+      test: './path/to/.env.test',
+      production: './path/to/.env.production'
+    }
+  }
+});
+
+// pre-generated config from ember-cli
+module.exports = app.toTree();
+```
+
+With the above, if you run `ember build --environment production`, the file
+`.env.production` will be used instead.
 
 
 ## Development Installation
