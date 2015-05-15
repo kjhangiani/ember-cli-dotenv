@@ -35,6 +35,6 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "dotenv": "^1.4.0"
+    "dotenv": "^1.0.0"
   }
 }
