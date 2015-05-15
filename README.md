@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/fivetanley/ember-cli-dotenv.svg)](https://travis-ci.org/fivetanley/ember-cli-dotenv)
 # Ember CLI Dotenv
 
-# This is a fork of fivetanley/ember-cli-dotenv with PR#6 by github.com/gniquil that I created just to ease by deployment via NPM.  All credit goes to the original authors.
+This is a fork of fivetanley/ember-cli-dotenv with PR#6 by github.com/gniquil that I created just to ease my deployment via NPM.  All credit goes to the original authors.  This repo is not intended for production use, just learning from it.
 
 # Installation
 
